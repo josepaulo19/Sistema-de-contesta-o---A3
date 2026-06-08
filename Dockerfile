@@ -5,6 +5,6 @@ RUN mvn clean package -DskipTests
 
 # Estágio 2: Execução da aplicação
 FROM eclipse-temurin-17-jre
-COPY --from=build /target/*.jar app.jar
+COPY --from=build /target/api-gastos-cartao-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
